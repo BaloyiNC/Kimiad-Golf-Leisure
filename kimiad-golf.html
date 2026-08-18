@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- ============================================================
+       KIMIAD GOLF & LEISURE — Website
+       Moreleta Park, Pretoria, South Africa
+       
+       HOW TO CUSTOMISE:
+       1. Search for [REPLACE] to find every placeholder
+       2. Swap Logo.jpeg with your actual logo file in the same folder
+       3. Add real photos by replacing <div class="ph ..."> placeholders
+          with <img src="your-photo.jpg" alt="description">
+       4. Update phone/address/email/social URLs
+       5. To connect the contact form: use Formspree, EmailJS, or your backend
+  ============================================================ -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO Meta Tags ── -->
+  <title>Kimiad Golf & Leisure | Golf Course & Driving Range — Pretoria</title>
+  <meta name="description" content="Kimiad Golf & Leisure — 18-hole championship course, covered driving range, coaching and events in Moreleta Park, Pretoria. Book your tee time today.">
+  <meta name="keywords" content="golf course Pretoria, driving range near me, Pretoria golf, Kimiad golf, Moreleta Park golf, tee time Pretoria, golf lessons Pretoria, Pretoria driving range, golf course Gauteng">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.kimiadgolf.co.za"> <!-- [REPLACE] -->
+
+  <!-- ── Open Graph / Social Preview ── -->
+  <meta property="og:title" content="Kimiad Golf & Leisure — Pretoria">
+  <meta property="og:description" content="Where Heaven Meets the Earth. Championship golf, driving range & leisure in Moreleta Park.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.kimiadgolf.co.za"> <!-- [REPLACE] -->
+  <meta property="og:image" content="https://www.kimiadgolf.co.za/og-image.jpg"> <!-- [REPLACE] -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ── Google Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* ============================================================
+       CSS CUSTOM PROPERTIES — change these to retheme the site
+    ============================================================ */
+    :root {
+      /* Palette */
+      --forest:       #1B3A27;   /* deep forest green — hero, nav, footer */
+      --fairway:      #2D5A3D;   /* mid green — card hovers, dark sections */
+      --canopy:       #4A8560;   /* lighter green — icons, accents */
+      --sage:         #EAF0E8;   /* pale sage — section backgrounds */
+      --gold:         #C9963C;   /* amber gold — primary accent */
+      --gold-light:   #E5B86A;   /* soft gold — italic hero text */
+      --gold-pale:    #F5E6C0;   /* cream gold — badge backgrounds */
+      --parchment:    #F7F3EC;   /* warm off-white — body background */
+      --white:        #FFFFFF;
+      --ink:          #2A2A2A;   /* near-black text */
+      --mid:          #6B6B6B;   /* body grey */
+      --rule:         #E0DAD0;   /* divider lines */
+
+      /* Type */
+      --f-display: 'Cormorant Garamond', Georgia, serif;
+      --f-body:    'DM Sans', system-ui, sans-serif;
+      --f-ui:      'Montserrat', system-ui, sans-serif;
+
+      /* Radii */
+      --r-sm: 4px;
+      --r-md: 10px;
+      --r-lg: 20px;
+
+      /* Shadows */
+      --sh-sm: 0 2px 10px rgba(27,58,39,0.09);
+      --sh-md: 0 6px 28px rgba(27,58,39,0.14);
+      --sh-lg: 0 16px 52px rgba(27,58,39,0.18);
+
+      /* Transitions */
+      --ease: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Layout */
+      --max-w: 1200px;
+      --pad-x: 1.5rem;
+    }
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--f-body);
+      background: var(--parchment);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ============================================================
+       TYPE SCALE
+    ============================================================ */
+    h1, h2, h3, h4 { font-family: var(--f-display); line-height: 1.12; }
+
+    .eyebrow {
+      font-family: var(--f-ui);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ============================================================
+       LAYOUT UTILS
+    ============================================================ */
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+
+    /* Section vertical rhythm — use padding-block on each section directly for control */
+    .section-pad   { padding-block: 5.5rem; }
+    .section-pad-sm { padding-block: 3.5rem; }
+
+    /* Background variants */
+    .bg-parchment { background: var(--parchment); }
+    .bg-white     { background: var(--white); }
+    .bg-sage      { background: var(--sage); }
+    .bg-forest    { background: var(--forest); color: var(--parchment); }
+    .bg-darkest   { background: #0F2318; color: var(--parchment); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      font-family: var(--f-ui);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--r-sm);
+      border: 2px solid transparent;
+      transition: var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover {
+      background: #A87B2A;
+      border-color: #A87B2A;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,150,60,0.35);
+    }
+
+    .btn-ghost-white {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.65);
+    }
+    .btn-ghost-white:hover {
+      background: var(--white);
+      color: var(--forest);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost-forest {
+      background: transparent;
+      color: var(--forest);
+      border-color: var(--forest);
+    }
+    .btn-ghost-forest:hover {
+      background: var(--forest);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ── Gold hairline rule ── */
+    .g-rule {
+      display: block;
+      width: 52px;
+      height: 2px;
+      background: var(--gold);
+      border: none;
+      margin: 0.9rem 0 0;
+    }
+    .g-rule.center { margin: 0.9rem auto 0; }
+
+    /* ============================================================
+       SCROLL-IN ANIMATIONS
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+    /* stagger children */
+    .reveal-group > *:nth-child(1) { transition-delay: 0.00s; }
+    .reveal-group > *:nth-child(2) { transition-delay: 0.10s; }
+    .reveal-group > *:nth-child(3) { transition-delay: 0.20s; }
+    .reveal-group > *:nth-child(4) { transition-delay: 0.30s; }
+    .reveal-group > *:nth-child(5) { transition-delay: 0.38s; }
+    .reveal-group > *:nth-child(6) { transition-delay: 0.46s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ============================================================
+       ── NAVIGATION ──
+    ============================================================ */
+    #nav {
+      position: fixed;
+      inset-inline: 0;
+      top: 0;
+      z-index: 900;
+      padding-block: 1.1rem;
+      transition: background var(--ease), box-shadow var(--ease), padding var(--ease);
+    }
+    #nav.solid {
+      background: var(--forest);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+      padding-block: 0.75rem;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    /* Logo: white pill backing so the logo reads on dark hero */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      /* The actual logo image has a light bg so we wrap it in a white pill */
+    }
+    .nav-logo-img-wrap {
+      background: #fff;
+      border-radius: 50%;
+      padding: 0;
+      height: 44px;
+      width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .nav-logo-img-wrap img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .nav-logo-text {
+      margin-left: 0.6rem;
+      font-family: var(--f-display);
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .nav-logo-text strong {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .nav-logo-text small {
+      display: block;
+      font-family: var(--f-ui);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    /* Desktop links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-family: var(--f-ui);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+      position: relative;
+      transition: color var(--ease);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform var(--ease);
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--white); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    /* Hamburger */
+    .nav-burger {
+      display: none;
+      background: none;
+      border: none;
+      padding: 0.4rem;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-end;
+    }
+    .nav-burger span {
+      display: block;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--ease);
+    }
+    .nav-burger span:nth-child(1) { width: 22px; }
+    .nav-burger span:nth-child(2) { width: 16px; }
+    .nav-burger span:nth-child(3) { width: 22px; }
+    .nav-burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); width: 22px; }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); width: 22px; }
+
+    /* Mobile overlay */
+    #mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: var(--forest);
+      z-index: 800;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.6rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #mobile-nav.open { opacity: 1; pointer-events: all; }
+    #mobile-nav a {
+      font-family: var(--f-display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--white);
+      transition: color var(--ease);
+    }
+    #mobile-nav a:hover { color: var(--gold-light); }
+    .mobile-socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .mobile-socials a {
+      font-size: 1rem !important;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ============================================================
+       ── HERO ──
+       Signature element: diagonal scorecard-line texture in the 
+       hero background — fine parallel lines like a caddie's yardage
+       book — specific to golf, invisible on first glance, textural.
+    ============================================================ */
+    #home {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Hero base: deep green gradient  */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      /*
+        [REPLACE]: To add a real course photo, change background-color to:
+        background: linear-gradient(160deg, rgba(15,35,24,0.90) 0%, rgba(27,58,39,0.82) 100%),
+                    url('your-hero-photo.jpg') center/cover no-repeat;
+        and remove background-color below.
+      */
+      background: linear-gradient(155deg,
+        #0f2318 0%,
+        #1b3a27 35%,
+        #2d5a3d 70%,
+        #1b3a27 100%);
+    }
+
+    /* Diagonal scorecard lines — the signature texture */
+    .hero-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-lines::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background-image: repeating-linear-gradient(
+        -35deg,
+        transparent 0px,
+        transparent 38px,
+        rgba(255,255,255,0.035) 38px,
+        rgba(255,255,255,0.035) 39px
+      );
+    }
+    /* Subtle radial vignette */
+    .hero-lines::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 30% 50%,
+        transparent 40%,
+        rgba(10,24,16,0.55) 100%);
+    }
+
+    /* Wave at bottom of hero */
+    .hero-wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 90px;
+    }
+    .hero-wave svg { width: 100%; height: 100%; }
+
+    /* Hero content */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-block: 9rem 7rem;
+      width: 100%;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+    .hero-kicker::before,
+    .hero-kicker::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-h1 {
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.06;
+      max-width: 650px;
+      margin-bottom: 1.1rem;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 440px;
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Hero stats bar */
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      margin-top: 4.5rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1.75rem;
+      max-width: 400px;
+    }
+    .hero-stat { flex: 1; }
+    .hero-stat + .hero-stat {
+      border-left: 1px solid rgba(255,255,255,0.12);
+      padding-left: 1.5rem;
+    }
+    .hero-stat-n {
+      font-family: var(--f-display);
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-l {
+      font-family: var(--f-ui);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* ============================================================
+       ── SERVICE STRIP ──
+       Floats above the first section, overlapping the hero wave
+    ============================================================ */
+    .strip-outer {
+      position: relative;
+      z-index: 10;
+    }
+    .strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: var(--white);
+      border-radius: var(--r-md);
+      box-shadow: var(--sh-lg);
+      margin-top: -3rem;
+      overflow: hidden;
+    }
+    .strip-cell {
+      padding: 1.75rem;
+      border-right: 1px solid var(--rule);
+      transition: background var(--ease);
+    }
+    .strip-cell:last-child { border-right: none; }
+    .strip-cell:hover { background: var(--forest); }
+    .strip-cell:hover .strip-title { color: var(--white); }
+    .strip-cell:hover .strip-body  { color: rgba(255,255,255,0.65); }
+
+    .strip-icon { font-size: 1.75rem; margin-bottom: 0.85rem; display: block; }
+    .strip-title {
+      font-family: var(--f-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+      transition: color var(--ease);
+    }
+    .strip-body {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.6;
+      transition: color var(--ease);
+    }
+
+    /* ============================================================
+       ── SERVICES SECTION ──
+    ============================================================ */
+    #services {
+      background: var(--parchment);
+    }
+
+    .sec-hdr { max-width: 520px; margin-bottom: 3.5rem; }
+    .sec-hdr h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--forest);
+      margin-top: 0.4rem;
+    }
+    .sec-hdr p { color: var(--mid); margin-top: 0.85rem; line-height: 1.75; }
+
+    .sec-hdr.center { margin-inline: auto; text-align: center; }
+    .sec-hdr.center .g-rule { margin: 0.9rem auto 0; }
+
+    /* Card grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+      gap: 1.6rem;
+    }
+
+    .s-card {
+      background: var(--white);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      box-shadow: var(--sh-sm);
+      transition: box-shadow var(--ease), transform var(--ease);
+      display: flex;
+      flex-direction: column;
+    }
+    .s-card:hover {
+      box-shadow: var(--sh-lg);
+      transform: translateY(-4px);
+    }
+
+    /* Placeholder photo panels — replace with <img> */
+    .ph {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .ph img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .ph-1 { background: linear-gradient(135deg, #2D5A3D, #1B3A27); }
+    .ph-2 { background: linear-gradient(135deg, #4A8560, #2D5A3D); }
+    .ph-3 { background: linear-gradient(135deg, #3A6B4A, #1B3A27); }
+    .ph-4 { background: linear-gradient(135deg, #1B3A27, #0F2318); }
+    .ph-5 { background: linear-gradient(135deg, #2D5A3D, #4A8560); }
+    .ph-6 { background: linear-gradient(135deg, #4A8560, #3A6B4A); }
+
+    .s-card-body {
+      padding: 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .s-card-title {
+      font-family: var(--f-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+    }
+    .s-card-desc { font-size: 0.875rem; color: var(--mid); line-height: 1.7; }
+
+    .s-card-features {
+      margin-top: 1.1rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 1.1rem;
+      flex: 1;
+    }
+    .s-card-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.83rem;
+      color: var(--ink);
+      margin-bottom: 0.45rem;
+      line-height: 1.5;
+    }
+    .s-card-features li::before {
+      content: '—';
+      color: var(--gold);
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: var(--gold-pale);
+      color: #8A5E1A;
+      font-family: var(--f-ui);
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      margin-top: 1rem;
+    }
+
+    /* ============================================================
+       ── PULL QUOTE (dark) ──
+    ============================================================ */
+    #quote-band {
+      background: var(--forest);
+      padding-block: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #quote-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0px, transparent 80px,
+        rgba(255,255,255,0.025) 80px, rgba(255,255,255,0.025) 81px
+      );
+    }
+    .pull-quote {
+      font-family: var(--f-display);
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--parchment);
+      line-height: 1.45;
+      max-width: 720px;
+    }
+    .pull-quote em { font-style: normal; color: var(--gold-light); }
+
+    /* ============================================================
+       ── GALLERY ──
+    ============================================================ */
+    #gallery { background: var(--sage); }
+
+    /* Asymmetric 12-column mosaic */
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 230px 230px 230px;
+      gap: 8px;
+    }
+
+    .gal-item {
+      overflow: hidden;
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      position: relative;
+    }
+    .gal-item::after {
+      content: attr(data-cap);
+      position: absolute;
+      inset: 0;
+      background: rgba(15,35,24,0);
+      color: transparent;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem 1.1rem;
+      font-family: var(--f-ui);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: var(--ease);
+    }
+    .gal-item:hover::after {
+      background: rgba(15,35,24,0.72);
+      color: var(--white);
+    }
+
+    .gal-ph {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+      transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .gal-item:hover .gal-ph { transform: scale(1.07); }
+    .gal-item:hover img { transform: scale(1.07); }
+    .gal-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* mosaic placement */
+    .gal-item:nth-child(1) { grid-column: 1/6;  grid-row: 1/2; }
+    .gal-item:nth-child(2) { grid-column: 6/9;  grid-row: 1/2; }
+    .gal-item:nth-child(3) { grid-column: 9/13; grid-row: 1/2; }
+    .gal-item:nth-child(4) { grid-column: 1/4;  grid-row: 2/3; }
+    .gal-item:nth-child(5) { grid-column: 4/9;  grid-row: 2/3; }
+    .gal-item:nth-child(6) { grid-column: 9/13; grid-row: 2/3; }
+    .gal-item:nth-child(7) { grid-column: 1/5;  grid-row: 3/4; }
+    .gal-item:nth-child(8) { grid-column: 5/9;  grid-row: 3/4; }
+    .gal-item:nth-child(9) { grid-column: 9/13; grid-row: 3/4; }
+
+    .gal-item:nth-child(1) .gal-ph { background: linear-gradient(135deg,#2D5A3D,#1B3A27); }
+    .gal-item:nth-child(2) .gal-ph { background: linear-gradient(135deg,#4A8560,#2D5A3D); }
+    .gal-item:nth-child(3) .gal-ph { background: linear-gradient(135deg,#1B3A27,#0F2318); }
+    .gal-item:nth-child(4) .gal-ph { background: linear-gradient(135deg,#3A6B4A,#2D5A3D); }
+    .gal-item:nth-child(5) .gal-ph { background: linear-gradient(135deg,#2D5A3D,#4A8560); }
+    .gal-item:nth-child(6) .gal-ph { background: linear-gradient(135deg,#4A8560,#1B3A27); }
+    .gal-item:nth-child(7) .gal-ph { background: linear-gradient(135deg,#1B3A27,#2D5A3D); }
+    .gal-item:nth-child(8) .gal-ph { background: linear-gradient(135deg,#3A6B4A,#1B3A27); }
+    .gal-item:nth-child(9) .gal-ph { background: linear-gradient(135deg,#2D5A3D,#3A6B4A); }
+
+    .gal-note {
+      margin-top: 1.25rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--mid);
+      font-style: italic;
+    }
+
+    /* ============================================================
+       ── ABOUT ──
+    ============================================================ */
+    #about { background: var(--parchment); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    /* Image frame with gold bracket corners */
+    .about-frame {
+      position: relative;
+    }
+    .about-frame-img {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      height: 500px;
+    }
+    .about-frame-img .ph {
+      height: 100%;
+      font-size: 6rem;
+    }
+    .about-frame-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* Gold bracket corners — the "upscale" detail */
+    .corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+    }
+    .corner-tr { top: -10px; right: -10px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+    .corner-bl { bottom: -10px; left: -10px; border-bottom: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+
+    /* Story text */
+    .about-text h2 {
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      font-weight: 600;
+      color: var(--forest);
+      margin-top: 0.4rem;
+    }
+    .about-text p {
+      color: var(--mid);
+      margin-top: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Stat boxes */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .stat-box {
+      background: var(--sage);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--r-sm);
+      padding: 1.2rem 1.4rem;
+    }
+    .stat-box-n {
+      font-family: var(--f-display);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--forest);
+      line-height: 1;
+    }
+    .stat-box-l {
+      font-family: var(--f-ui);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 0.3rem;
+    }
+
+    /* ============================================================
+       ── CONTACT ──
+    ============================================================ */
+    #contact { background: var(--sage); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.45fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-grid > * {
+      min-width: 0;
+    }
+
+    /* Info column */
+    .info-items { display: flex; flex-direction: column; gap: 1.75rem; }
+
+    .info-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .info-icon {
+      width: 42px; height: 42px;
+      background: var(--forest);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .info-label {
+      font-family: var(--f-ui);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+    .info-val {
+      font-size: 0.9rem;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .info-val a { color: var(--forest); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Hours table */
+    .hours { width: 100%; border-collapse: collapse; }
+    .hours td { padding: 0.3rem 0; font-size: 0.85rem; }
+    .hours td:first-child { color: var(--mid); min-width: 110px; }
+
+    /* Map placeholder */
+    .map-ph {
+      height: 190px;
+      background: var(--canopy);
+      border-radius: var(--r-md);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.6rem;
+      color: var(--white);
+      font-family: var(--f-ui);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 1.5rem;
+      text-align: center;
+      padding: 0.2rem;
+    }
+    .map-ph iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+
+    /* Contact form card */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 2.5rem;
+      box-shadow: var(--sh-md);
+    }
+    .form-card h3 {
+      font-family: var(--f-display);
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-top: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .f-group { margin-bottom: 1.1rem; }
+
+    .f-label {
+      display: block;
+      font-family: var(--f-ui);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.4rem;
+    }
+    .f-control {
+      width: 100%;
+      padding: 0.78rem 1rem;
+      background: var(--parchment);
+      border: 1.5px solid var(--rule);
+      border-radius: var(--r-sm);
+      font-family: var(--f-body);
+      font-size: 0.9rem;
+      color: var(--ink);
+      transition: border-color var(--ease), box-shadow var(--ease);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .f-control:focus {
+      outline: none;
+      border-color: var(--canopy);
+      box-shadow: 0 0 0 3px rgba(74,133,96,0.12);
+    }
+    .f-control::placeholder { color: var(--mid); opacity: 0.6; }
+    textarea.f-control { resize: vertical; min-height: 120px; }
+
+    .f-msg {
+      display: none;
+      margin-top: 1rem;
+      font-family: var(--f-ui);
+      font-size: 0.82rem;
+      text-align: center;
+      padding: 0.75rem;
+      border-radius: var(--r-sm);
+    }
+    .f-msg.ok  { background: #e6f4ea; color: #1e5c2e; display: block; }
+    .f-msg.err { background: #fce8e6; color: #8B2222; display: block; }
+
+    /* Social icon links (reused in multiple places) */
+    .soc-links { display: flex; gap: 0.6rem; justify-content: center; }
+    .soc-a {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid currentColor;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      transition: var(--ease);
+      color: var(--forest);
+    }
+    .soc-a:hover { background: var(--forest); color: var(--white); transform: translateY(-2px); }
+    .soc-a.light { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.25); }
+    .soc-a.light:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
+
+    /* ============================================================
+       ── FOOTER ──
+    ============================================================ */
+    footer {
+      background: #0F2318;
+      color: rgba(255,255,255,0.65);
+      padding-block: 4rem 2rem;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .foot-brand strong {
+      display: block;
+      font-family: var(--f-display);
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .foot-brand em {
+      font-family: var(--f-display);
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1rem;
+    }
+    .foot-brand p {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      margin-top: 0.9rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .foot-col-ttl {
+      font-family: var(--f-ui);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.1rem;
+    }
+
+    .foot-links { display: flex; flex-direction: column; gap: 0.55rem; }
+    .foot-links a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      transition: color var(--ease);
+    }
+    .foot-links a:hover { color: var(--white); }
+    .foot-links li {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .foot-bar {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .foot-bar p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    /* ============================================================
+       ── WHATSAPP FLOAT ──
+    ============================================================ */
+    .wa-float {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 800;
+      width: 54px; height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: var(--ease);
+      color: var(--white);
+    }
+    .wa-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .foot-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .about-frame { display: none; } /* hide on tablet — optional */
+    }
+
+    @media (max-width: 768px) {
+      .section-pad { padding-block: 3.5rem; }
+      .section-pad-sm { padding-block: 2.5rem; }
+
+      /* Nav */
+      .nav-links, #nav .btn { display: none; }
+      .nav-burger { display: flex; }
+
+      /* Strip */
+      .strip-grid {
+        grid-template-columns: 1fr;
+      }
+      .strip-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+      }
+      .strip-cell:last-child { border-bottom: none; }
+
+      /* Gallery: 2-col fluid on mobile */
+      .gal-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: unset;
+        gap: 6px;
+      }
+      .gal-item {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        height: 160px;
+      }
+      .gal-item:nth-child(1),
+      .gal-item:nth-child(5) {
+        grid-column: 1 / -1 !important;
+        height: 200px;
+      }
+
+      /* About */
+      .about-frame { display: block; }
+      .about-frame-img { height: 280px; }
+
+      /* Form */
+      .f-row { grid-template-columns: 1fr; }
+
+      /* Footer */
+      .foot-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      .foot-bar { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-h1 { font-size: 2.6rem; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .hero-stats { flex-direction: column; max-width: 100%; }
+      .hero-stat + .hero-stat {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        padding-left: 0;
+        padding-top: 1.1rem;
+        margin-top: 1.1rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="nav" aria-label="Main navigation">
+    <div class="wrap">
+      <div class="nav-inner">
+
+        <a href="#home" class="nav-logo" aria-label="Kimiad Golf & Leisure — Home">
+          <div class="nav-logo-img-wrap">
+            <img src="Logo.jpeg" alt="Kimiad Golf Logo">
+          </div>
+          <div class="nav-logo-text">
+            <strong>KIMIAD</strong>
+            <small>Golf &amp; Leisure</small>
+          </div>
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="nav-links" role="list">
+          <li><a href="#home"     class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery"> Gallery</a></li>
+          <li><a href="#about">   About</a></li>
+          <li><a href="#contact"> Contact</a></li>
+        </ul>
+
+        <!-- Book Now CTA (desktop) -->
+        <a href="#contact" class="btn btn-gold" style="padding: 0.7rem 1.4rem; font-size: 0.68rem;">
+          ⛳ Enquire
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button class="nav-burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <a href="#home"     class="mnav">Home</a>
+    <a href="#services" class="mnav">Services</a>
+    <a href="#gallery"  class="mnav">Gallery</a>
+    <a href="#about"    class="mnav">About</a>
+    <a href="#contact"  class="mnav">Contact</a>
+    <a href="#contact" class="btn btn-gold" style="margin-top:0.5rem;">⛳ Enquire</a>
+    <div class="mobile-socials">
+      <a href="https://www.facebook.com/kimiadgolfcourse/" target="_blank" rel="noopener" aria-label="Facebook" class="soc-a light">f</a>
+      <a href="https://www.instagram.com/kimiadgolfcourse?igsh=MWVpbmp3NjdjbHNrMw==" target="_blank" rel="noopener" aria-label="Instagram" class="soc-a light">✦</a>
+      <a href="https://wa.me/27000000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="soc-a light" style="background:#25D366;border-color:#25D366;color:#fff;">💬</a>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       HERO — Section: #home
+  ============================================================ -->
+  <section id="home" aria-label="Hero">
+
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
+
+    <div class="wrap hero-content">
+
+      <div class="hero-kicker">
+        <span class="eyebrow" style="color: var(--gold-light);">Moreleta Park · Pretoria · South Africa</span>
+      </div>
+
+      <h1 class="hero-h1">
+        Where <em>Heaven</em><br>Meets the Earth
+      </h1>
+
+      <p class="hero-sub">
+        Kimiad Golf &amp; Leisure brings together a challenging 18-hole championship course, a professional driving range, and South African hospitality — all set against the natural beauty of the Highveld.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-gold">⛳ Enquire</a>
+        <a href="#services" class="btn btn-ghost-white">Explore Facilities</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-n">18</div>
+          <div class="hero-stat-l">Hole Course</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">30+</div>
+          <div class="hero-stat-l">Range Bays</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">4.7K</div>
+          <div class="hero-stat-l">Community</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Wave transition into next section -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,90 C480,0 960,0 1440,90 L1440,90 L0,90 Z" fill="#F7F3EC"/>
+      </svg>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SERVICE STRIP — floats on the hero wave
+  ============================================================ -->
+  <div class="wrap strip-outer">
+    <div class="strip-grid reveal-group">
+
+      <div class="strip-cell reveal">
+        <span class="strip-icon">⛳</span>
+        <div class="strip-title">18-Hole Course</div>
+        <p class="strip-body">Championship layout through indigenous bush and water features. A new challenge at every tee.</p>
+      </div>
+
+      <div class="strip-cell reveal">
+        <span class="strip-icon">🏌️</span>
+        <div class="strip-title">Driving Range</div>
+        <p class="strip-body">Open bays with range markers. 3305 yards, various pars for beginners and advanced golfers.</p>
+      </div>
+
+      <div class="strip-cell reveal">
+        <span class="strip-icon">🏆</span>
+        <div class="strip-title">Pro Shop &amp; Hire</div>
+        <p class="strip-body">PGA-standard equipment, premium club fitting, and top gear from our professional team.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       SERVICES — Section: #services
+  ============================================================ -->
+  <section id="services" class="section-pad bg-parchment">
+    <div class="wrap">
+
+      <div class="sec-hdr reveal">
+        <p class="eyebrow">What We Offer</p>
+        <h2>A Complete<br>Golf Experience</h2>
+        <hr class="g-rule">
+        <p>From a sweeping championship layout to beginner-friendly golfing, Kimiad caters to every skill level — and to those who simply love the lifestyle of the course.</p>
+      </div>
+
+      <!-- Card grid -->
+      <div class="card-grid reveal-group">
+
+        <!-- 1: Golf Course -->
+        <article class="s-card reveal">
+          <div class="ph ph-1">
+            <img src="Gallery/Overview 4.jpg" alt="18-Hole Course">
+            ⛳
+          </div>
+          <div class="s-card-body">
+            <h3 class="s-card-title">18-Hole Championship Course</h3>
+            <p class="s-card-desc">Designed for challenge and beauty in equal measure, our course winds through the natural terrain of Moreleta Park — every hole a story of its own.</p>
+            <ul class="s-card-features">
+              <li>Championship tees for all skill levels</li>
+              <li>Water features on multiple holes</li>
+              <li>TrolleyFit rental available</li>
+            </ul>
+            <span class="price-badge"><center>R0 — Free Access</center></span>
+          </div>
+        </article>
+
+        <!-- 2: Driving Range -->
+        <article class="s-card reveal">
+          <div class="ph ph-2">
+            <img src="Gallery/Driving Range.jpg" alt="Driving Range">
+            🏌️
+          </div>
+          <div class="s-card-body">
+            <h3 class="s-card-title">Driving Range</h3>
+            <p class="s-card-desc">Tune your long game on our well-maintained range. Wide, open bays, quality balls, and night lighting make it perfect any time of day. The range awaits your swing.</p>
+            <ul class="s-card-features">
+              <li>Wide &amp; open bays</li>
+              <li>Quality range balls for sale</li>
+              <li>Coaching services on request</li>
+            </ul>
+            <span class="price-badge"><center>R0 — Free Access</center></span>
+          </div>
+        </article>
+
+        <!-- 3: Coaching & Pro Shop -->
+        <article class="s-card reveal">
+          <div class="ph ph-3">
+            <img src="Gallery/Golf 2.jpg" alt="Pro Shop">
+            🏆
+          </div>
+          <div class="s-card-body">
+            <h3 class="s-card-title">Coaching &amp; Pro Shop</h3>
+            <p class="s-card-desc">Our certified professionals offer individual and group lessons, junior programmes, and full custom-fitting. The pro shop stocks leading brands at competitive prices.</p>
+            <ul class="s-card-features">
+              <li>Individual &amp; group coaching</li>
+              <li>Junior golf programme</li>
+              <li>Premium gear &amp; apparel</li>
+            </ul>
+            <span class="price-badge"><center>Custom Packages — Enquire Below</center></span>
+          </div>
+        </article>
+
+        <!-- 4: Events & Functions -->
+        <article class="s-card reveal">
+          <div class="ph ph-4">
+            <img src="Gallery/Fountain.jpg" alt="Events">
+            🎉
+          </div>
+          <div class="s-card-body">
+            <h3 class="s-card-title">Events &amp; Functions</h3>
+            <p class="s-card-desc">Host unforgettable corporate golf days, charity tournaments, and private functions. Our team handles logistics, catering, and activation so you can focus on the game.</p>
+            <ul class="s-card-features">
+              <li>Corporate golf days &amp; teambuilding</li>
+              <li>Tournament hosting &amp; administration</li>
+              <li>Catering &amp; restaurant packages</li>
+            </ul>
+            <span class="price-badge"><center>Custom Packages — Enquire Below</center></span>
+          </div>
+        </article>
+
+        <!-- 5: TrolleyFit Hire -->
+        <article class="s-card reveal">
+          <div class="ph ph-5">
+            <img src="Gallery/Trolley 2.jpg" alt="TrolleyFit Hire">
+            🚗
+          </div>
+          <div class="s-card-body">
+            <h3 class="s-card-title">TrolleyFit Hire</h3>
+            <p class="s-card-desc">Enjoy your day without the heavy labor of carrying your clubs. Hire from our well-maintained fleet. Always available to keep your game sharp.</p>
+            <ul class="s-card-features">
+              <li>Single TrolleyFit carts</li>
+              <li>Pull &amp; push trolleys</li>
+              <li>Included in select packages</li>
+            </ul>
+            <span class="price-badge"><center>From R85 for the day</center></span>
+          </div>
+        </article>
+
+        <!-- 6: Restaurant & Trails -->
+        <article class="s-card reveal">
+          <div class="ph ph-6">
+            <img src="Gallery/Restaurant.jpg" alt="Restaurant">
+            🍽️
+          </div>
+          <div class="s-card-body">
+            <h3 class="s-card-title">Restaurant &amp; Walking Trails</h3>
+            <p class="s-card-desc">After your round, unwind at our restaurant with panoramic views over the course. Or explore scenic walking trails through pristine Highveld bushveld — open to all.</p>
+            <ul class="s-card-features">
+              <li>Full-service restaurant &amp; bar</li>
+              <li>Views over the 18th fairway</li>
+              <li>Scenic walking trails</li>
+            </ul>
+            <span class="price-badge"><center></center>Open to Public Daily</center></span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PULL QUOTE BAND (dark green)
+  ============================================================ -->
+  <section id="quote-band" aria-label="Brand statement">
+    <div class="wrap">
+      <p class="eyebrow reveal" style="color:var(--gold-light); margin-bottom:1.25rem;">The Kimiad Promise</p>
+      <blockquote class="pull-quote reveal">
+        "Whether you're chasing your best round or bringing the family out for the day, Kimiad is <em>your place</em> — where the fairways feel like home and every round tells a story."
+      </blockquote>
+      <div style="margin-top: 2.25rem; position: relative; z-index: 10;">
+        <a href="#contact" class="btn btn-gold">Book Your Experience</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GALLERY — Section: #gallery
+  ============================================================ -->
+  <section id="gallery" class="section-pad bg-sage">
+    <div class="wrap">
+
+      <div class="sec-hdr center reveal">
+        <p class="eyebrow">The Course &amp; Grounds</p>
+        <h2>See Kimiad</h2>
+        <hr class="g-rule center">
+        <p>Pristine greens, breathtaking views, and scenic landscapes across our Pretoria estate.</p>
+      </div>
+
+      <div class="gal-grid" style="margin-top:3rem;" role="list">
+
+        <div class="gal-item reveal" data-cap="Kimiad" role="listitem">
+          <img src="Gallery/Overview 2.jpg" alt="">
+        </div>
+
+        <div class="gal-item reveal" data-cap="Resting Area">
+          <img src="Gallery/Bench.jpg" alt="">
+        </div>
+
+        <div class="gal-item reveal" data-cap="Club Animals"> 
+          <img src="Gallery/Monkeys.jpg" alt="">
+        </div>
+
+        <div class="gal-item reveal" data-cap="Golfing">
+          <img src="Gallery/Golfing 2.jpg" alt="">
+        </div>
+
+        <div class="gal-item reveal" data-cap="Our Greenery">
+          <img src="Gallery/Overview.jpg" alt="">
+        </div>
+
+        <div class="gal-item reveal" data-cap="Hiking Trail">
+          <img src="Gallery/Dexter Trail.jpg" alt="🏛️">
+        </div>
+
+        <div class="gal-item reveal" data-cap="Golfing">
+          <img src="Gallery/No Membership Required.jpg" alt="🏛️">
+        </div>
+
+        <div class="gal-item reveal" data-cap="Golf Balls">
+          <img src="Gallery/Golf Bucket.jpg" alt="🏛️">
+        </div>
+
+        <div class="gal-item reveal" data-cap="Restaurant Staff">
+          <img src="Gallery/Rosewood Workers.jpg" alt="🏛️">
+        </div>
+
+      </div>
+      <p class="gal-note"></p>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT — Section: #about
+  ============================================================ -->
+  <section id="about" class="section-pad bg-parchment">
+    <div class="wrap">
+      <div class="about-grid">
+
+        <!-- Image frame with gold bracket corners -->
+        <div class="about-frame reveal">
+          <div class="about-frame-img">
+            <video width="100%" height="100%" autoplay muted loop>
+            <source src="Gallery/Reel.mp4" type="video/mp4"> 
+            </video>
+          </div>
+          <div class="corner corner-tr"></div>
+          <div class="corner corner-bl"></div>
+        </div>
+
+        <!-- Story -->
+        <div class="about-text reveal">
+          <p class="eyebrow">Our Story</p>
+          <h2>The Kimiad Legacy</h2>
+          <hr class="g-rule">
+
+          <p>
+            Nestled in the heart of Moreleta Park, Pretoria, Kimiad Golf &amp; Leisure has been a pillar of the local golf community for decades. Our name carries a promise: a place where the pressures of daily life dissolve into the rhythm of the fairway.
+          </p>
+          <p>
+            From our championship 18-hole layout to our popular driving range, coaching academy, and scenic walking trails, every corner of Kimiad is designed to connect you with the game you love — and the extraordinary natural beauty of the Highveld. We are proud to be more than a golf course; we are a community.
+          </p>
+
+          <!-- Stat boxes -->
+          <div class="stat-row">
+            <div class="stat-box">
+              <div class="stat-box-n">18</div>
+              <div class="stat-box-l">Championship Holes</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-box-n">30+</div>
+              <div class="stat-box-l">Driving Range Bays</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-box-n">5.9K</div>
+              <div class="stat-box-l">Community Followers</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-box-n">4</div>
+              <div class="stat-box-l">Core Facilities</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT — Section: #contact
+  ============================================================ -->
+  <section id="contact" class="section-pad bg-sage">
+    <div class="wrap">
+
+      <div class="sec-hdr center reveal" style="margin-bottom: 3rem;">
+        <p class="eyebrow">Get in Touch</p>
+        <h2>Visit Us or Enquire Online</h2>
+        <hr class="g-rule center">
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Info column -->
+        <div class="info-items reveal">
+
+          <div class="info-row">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label">Address</div>
+              <div class="info-val">
+                Wekker Rd<br>
+                Moreleta Park, Pretoria<br>
+                Gauteng, South Africa
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div>
+              <div class="info-label">Phone</div>
+              <div class="info-val">
+                <a href="tel:+27129972240">+27 (0)12 997 2240</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon">✉️</div>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-val">
+                <a href="mailto:info@kimiadgolf.co.za">info@kimiadgolf.co.za</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div>
+              <div class="info-label">Operating Hours</div>
+              <div class="info-val">
+                <table class="hours">
+                  <tr><td>Monday – Friday</td><td>06:00 – 19:00</td></tr>
+                  <tr><td>Saturday</td><td>06:00 – 18:00</td></tr>
+                  <tr><td>Sunday</td><td>06:00 – 17:00</td></tr>
+                  <tr><td>Public Holidays</td><td>06:00 – 17:00</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="info-label" style="margin-bottom:0.75rem; text-align: center;">Follow Us</div>
+            <div class="soc-links">
+              <a href="https://www.facebook.com/kimiadgolfcourse/" target="_blank" rel="noopener" aria-label="Facebook" class="soc-a">f</a>
+              <a href="https://www.instagram.com/kimiadgolfcourse?igsh=MWVpbmp3NjdjbHNrMw==" target="_blank" rel="noopener" aria-label="Instagram" class="soc-a">✦</a>
+              <a href="https://wa.me/27000000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="soc-a" style="background:#25D366;border-color:#25D366;color:#fff;">💬</a>
+            </div>
+          </div>
+          
+          <div class="map-ph">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.537740915588!2d28.2947962!3d-25.818820199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95675e4b1258db%3A0x5b7fb0283ca3c6a8!2sKimiad%20Golf%20Course%20and%20Driving%20Range.!5e0!3m2!1sen!2sza!4v1786975737296!5m2!1sen!2sza" width="100" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          
+        </div>
+
+        <!-- Contact / Booking Form -->
+        <div class="form-card reveal">
+          <p class="eyebrow">Send a Message</p>
+          <h3>Enquire - (No booking required)</h3>
+
+          <!--
+            FORM SUBMISSION:
+            Option A: Formspree (free) — add action="https://formspree.io/f/YOUR_ID" method="POST" to <form>
+            Option B: EmailJS — call emailjs.sendForm() in the submit handler below
+            Option C: Your own backend endpoint
+          -->
+          <form id="cForm" novalidate>
+
+            <div class="f-row">
+              <div class="f-group">
+                <label class="f-label" for="fFirst">First Name *</label>
+                <input id="fFirst" name="firstName" type="text" class="f-control" placeholder="Your first name" required>
+              </div>
+              <div class="f-group">
+                <label class="f-label" for="fLast">Last Name</label>
+                <input id="fLast" name="lastName" type="text" class="f-control" placeholder="Your last name">
+              </div>
+            </div>
+
+            <div class="f-row">
+              <div class="f-group">
+                <label class="f-label" for="fEmail">Email Address *</label>
+                <input id="fEmail" name="email" type="email" class="f-control" placeholder="you@email.com" required>
+              </div>
+              <div class="f-group">
+                <label class="f-label" for="fPhone">Phone Number</label>
+                <input id="fPhone" name="phone" type="tel" class="f-control" placeholder="+27 XX XXX XXXX">
+              </div>
+            </div>
+
+            <div class="f-group">
+              <label class="f-label" for="fType">Type of Enquiry</label>
+              <select id="fType" name="enquiryType" class="f-control">
+                <option value="">— Select an option —</option>
+                <option value="tee-time">Book a Tee Time</option>
+                <option value="range">Driving Range</option>
+                <option value="lessons">Golf Lessons / Coaching</option>
+                <option value="event">Corporate Event / Tournament</option>
+                <option value="general">General Enquiry</option>
+              </select>
+            </div>
+
+            <div class="f-group">
+              <label class="f-label" for="fDate">Preferred Date</label>
+              <input id="fDate" name="preferredDate" type="date" class="f-control">
+            </div>
+
+            <div class="f-group">
+              <label class="f-label" for="fMsg">Message</label>
+              <textarea id="fMsg" name="message" class="f-control"
+                placeholder="Number of players, preferred tee time, any special requests…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center; font-size:0.75rem;">
+              ⛳ Send Enquiry
+            </button>
+
+            <p id="fOk"  class="f-msg"></p>
+            <p id="fErr" class="f-msg"></p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="bg-darkest">
+    <div class="wrap">
+
+      <div class="foot-grid">
+
+        <!-- Brand -->
+        <div class="foot-brand">
+          <strong>KIMIAD</strong>
+          <em>golf</em>
+          <p>Moreleta Park's premier golf destination — championship course, driving range, coaching academy, restaurant, and scenic walking trails in one Pretoria estate.</p>
+          <div class="soc-links" style="margin-top: 1.1rem;">
+            <!-- [REPLACE] with real URLs -->
+            <a href="https://www.facebook.com/kimiadgolfcourse/" target="_blank" rel="noopener" aria-label="Facebook" class="soc-a light">f</a>
+            <a href="https://www.instagram.com/kimiadgolfcourse?igsh=MWVpbmp3NjdjbHNrMw==" target="_blank" rel="noopener" aria-label="Instagram" class="soc-a light">✦</a>
+            <a href="https://wa.me/27000000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="soc-a light">💬</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <p class="foot-col-ttl">Quick Links</p>
+          <ul class="foot-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact &amp; Booking</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <p class="foot-col-ttl">Our Services</p>
+          <ul class="foot-links">
+            <li><a href="#services">18-Hole Course</a></li>
+            <li><a href="#services">Driving Range</a></li>
+            <li><a href="#services">Golf Lessons</a></li>
+            <li><a href="#services">Corporate Events</a></li>
+            <li><a href="#services">TrolleyFit Hire</a></li>
+            <li><a href="#services">Restaurant &amp; Trails</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact info -->
+        <div>
+          <p class="foot-col-ttl">Find Us</p>
+          <ul class="foot-links">
+            <li>📍 Moreleta Park, Pretoria</li>
+            <li><a href="tel:+27129972240">📞 +27 (0)12 997 2240</a></li>
+            <li><a href="mailto:info@kimiadgolf.co.za">✉️ info@kimiadgolf.co.za</a></li>
+            <li style="margin-top:0.5rem; font-size:0.8rem; color:rgba(255,255,255,0.35);">Mon–Fri: 06:00 – 19:00</li>
+            <li style="font-size:0.8rem; color:rgba(255,255,255,0.35);">Sat–Sun: 06:00 – 18:00</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="foot-bar">
+        <!-- [REPLACE] year and domain as needed -->
+        <p>© 2026 Kimiad Golf &amp; Leisure. All rights reserved.</p>
+        <p>Site by <a href="https://baloyi.netlify.app/" target="_blank" rel="noopener noreferrer">Bee_Shotss</a></p>
+        <p><a href="tel:+27129972240">📞 +27 (0)12 997 2240</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       WHATSAPP FLOATING BUTTON
+       [REPLACE] 27000000000 with your real number (no + or spaces)
+  ============================================================ -->
+  <a href="https://wa.me/27000000000?text=Hi%20Kimiad%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+     class="wa-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat with us on WhatsApp">
+    💬
+  </a>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+
+    /* ── Sticky nav: turn solid on scroll ── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('solid', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ── Highlight active nav link on scroll ── */
+    const sections   = document.querySelectorAll('section[id]');
+    const navAs      = document.querySelectorAll('.nav-links a');
+
+    const secObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          navAs.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -60% 0px' });
+
+    sections.forEach(s => secObs.observe(s));
+
+    /* ── Mobile burger menu ── */
+    const burger    = document.getElementById('burger');
+    const mobileNav = document.getElementById('mobile-nav');
+    const mLinks    = document.querySelectorAll('#mobile-nav .mnav, #mobile-nav .btn');
+
+    function openMenu() {
+      mobileNav.classList.add('open');
+      burger.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileNav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    burger.addEventListener('click', () =>
+      mobileNav.classList.contains('open') ? closeMenu() : openMenu()
+    );
+    mLinks.forEach(l => l.addEventListener('click', closeMenu));
+    // Close on Escape key
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+    /* ── Scroll-reveal animations ── */
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const revObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          revObs.unobserve(e.target); // fire once
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => revObs.observe(el));
+
+    /* ── Contact form: basic validation & feedback ── */
+    const cForm = document.getElementById('cForm');
+    const fOk   = document.getElementById('fOk');
+    const fErr  = document.getElementById('fErr');
+
+    function clearMsgs() {
+      fOk.className  = 'f-msg';
+      fErr.className = 'f-msg';
+    }
+
+    cForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearMsgs();
+
+      const name  = document.getElementById('fFirst').value.trim();
+      const email = document.getElementById('fEmail').value.trim();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!name || !emailOk) {
+        fErr.textContent  = '⚠️ Please enter your name and a valid email address.';
+        fErr.className    = 'f-msg err';
+        return;
+      }
+
+      /*
+        [REPLACE] — Connect your form here. Options:
+        A. Formspree: add action="https://formspree.io/f/YOUR_ID" + method="POST" to <form>
+           then remove e.preventDefault() above and let the browser submit.
+        B. EmailJS: call emailjs.sendForm('SERVICE_ID','TEMPLATE_ID', cForm)
+        C. Fetch to your own endpoint:
+           fetch('/api/contact', { method:'POST', body: new FormData(cForm) })
+      */
+
+      // Simulate success for now:
+      fOk.textContent = '✅ Thanks! We\'ll be in touch within one business day.';
+      fOk.className   = 'f-msg ok';
+      cForm.reset();
+    });
+
+    /* ── Smooth scroll fallback (older Safari) ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+  </script>
+
+
+  <!-- ============================================================
+       STRUCTURED DATA — helps Google show you in "golf near me" results
+  ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Kimiad Golf & Leisure",
+    "alternateName": "Kimiad Golf",
+    "description": "18-hole championship golf course, driving range, coaching, events and leisure facilities in Moreleta Park, Pretoria, South Africa.",
+    "url": "https://www.kimiadgolf.co.za",
+    "telephone": "+27000000000",
+    "email": "info@kimiadgolf.co.za",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Wekker Rd.",
+      "addressLocality": "Moreleta Park",
+      "addressRegion": "Gauteng",
+      "postalCode": "0181",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-25.8553",
+      "longitude": "28.2899"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "06:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "06:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday","PublicHolidays"],
+        "opens": "06:00",
+        "closes": "17:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/kimiadgolfcourse/",
+      "https://www.instagram.com/kimiadgolfcourse?igsh=MWVpbmp3NjdjbHNrMw=="
+    ],
+    "sport": "Golf",
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification","name": "18-Hole Golf Course","value": true},
+      {"@type": "LocationFeatureSpecification","name": "Driving Range","value": true},
+      {"@type": "LocationFeatureSpecification","name": "Pro Shop","value": true},
+      {"@type": "LocationFeatureSpecification","name": "Golf Lessons","value": true},
+      {"@type": "LocationFeatureSpecification","name": "Restaurant","value": true},
+      {"@type": "LocationFeatureSpecification","name": "TrolleyFit Hire","value": true},
+      {"@type": "LocationFeatureSpecification","name": "Walking Trails","value": true},
+      {"@type": "LocationFeatureSpecification","name": "Corporate Events","value": true}
+    ]
+  }
+  </script>
+
+</body>
+</html>
