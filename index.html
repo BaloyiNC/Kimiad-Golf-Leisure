@@ -1823,8 +1823,7 @@
       </div>
 
       <div class="foot-bar">
-        <!-- [REPLACE] year and domain as needed -->
-        <p>© 2026 Kimiad Golf &amp; Leisure. All rights reserved.</p>
+        <p>© <span id="copyright-year"></span> Kimiad Golf &amp; Leisure. All rights reserved.</p>
         <p>Site by <a href="https://baloyi.netlify.app/" target="_blank" rel="noopener noreferrer">Bee_Shotss</a></p>
         <p><a href="tel:+27129972240">📞 +27 (0)12 997 2240</a></p>
       </div>
@@ -1853,6 +1852,7 @@
 
     /* ── Sticky nav: turn solid on scroll ── */
     const nav = document.getElementById('nav');
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
     window.addEventListener('scroll', () => {
       nav.classList.toggle('solid', window.scrollY > 60);
     }, { passive: true });
